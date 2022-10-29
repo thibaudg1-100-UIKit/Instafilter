@@ -119,7 +119,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         
         
         if let cgImage = context.createCGImage(outputCIImage, from: outputCIImage.extent) {
+//            imageView.image = UIImage(cgImage: cgImage)
+            // for challenge project 15:
+            imageView.alpha = 0
             imageView.image = UIImage(cgImage: cgImage)
+            UIView.animate(withDuration: 2) {
+                self.imageView.alpha = 1
+            }
         }
     }
     
